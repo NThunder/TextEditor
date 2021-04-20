@@ -525,7 +525,7 @@ void TextEditor::EditorDrawRows(std::string& ab) {
     for (size_t y = 0; y < screenrows; y++) {
         int filerow = y + rowoff;
         if (filerow >= static_cast<int>(text_.size())) {
-            if (text_.size() == 0 && y == screenrows / 3) {
+            if (text_.size() == 1 && text_[0].size() == 0 && y == screenrows / 3) {
                 char welcome[80];
                 size_t welcomelen = snprintf(welcome, sizeof(welcome),
                     "term editor -- version %s", TERM_EDITOR_VERSION);
